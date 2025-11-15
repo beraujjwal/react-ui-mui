@@ -1,0 +1,5 @@
+{
+  "welcome": "Bienvenue sur mon application",
+  "language": "Langue",
+  "greet_user": "Bonjour, {{name}}!"
+}
