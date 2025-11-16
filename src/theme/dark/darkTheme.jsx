@@ -1,4 +1,4 @@
-import { shadeColor } from '../../../utils/utils';
+import { shadeColor } from '../../utils/utils';
 import { BASE_COLORS } from '../constants';
 
 

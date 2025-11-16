@@ -4,6 +4,22 @@ import mastercard from '../assets/images/cards/mastercard.png';
 import maestro from '../assets/images/cards/maestro.png';
 import { Currencies } from '../constants/Currencies';
 
+/**
+ * Checks if a given value is a valid JSON string.
+ * @param {string} str - The string to test.
+ * @returns {boolean} - Returns true if valid JSON, false otherwise.
+ */
+export function isJson(str) {
+  if (typeof str !== 'string') return false;
+  try {
+    const parsed = JSON.parse(str);
+    // Ensure the result is an object or array (not just a primitive)
+    return typeof parsed === 'object' && parsed !== null;
+  } catch (e) {
+    return false;
+  }
+}
+
 export const camelize = (string) => {
   return string
     .split(' ')

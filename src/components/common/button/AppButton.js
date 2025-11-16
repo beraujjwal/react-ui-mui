@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
-import AppIcon from '../AppIcon';
-import AppLink from '../AppLink';
-import { APP_BUTTON_VARIANT } from '../../config/config';
+import AppIcon from '../icon/AppIcon';
+import AppLink from '../link/AppLink';
+import { APP_BUTTON_VARIANT } from '../../../config/config';
 
 const MUI_BUTTON_COLORS = ['inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'];
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 import authHeader from "../utils/authHeader";
-import { API_BASE_URL } from "../constants/ApiPath";
+import { API_BASE_URL } from "../constants/Path";
 import { isTokenValid } from "../utils/validToken";
 
 const instance = axios.create({
@@ -10,7 +10,7 @@ const instance = axios.create({
 });
 
 
-api.interceptors.request.use(
+instance.interceptors.request.use(
   async(config) => {
     const token = localStorage.getItem("access_token");
 
@@ -18,7 +18,7 @@ api.interceptors.request.use(
       if (isTokenValid(token)) {
         config.headers.Authorization = `Bearer ${token}`;
       } else {
-        const newToken = await refreshAccessToken();
+        const newToken = null; //await refreshAccessToken();
 
         if (newToken) {
           localStorage.setItem("access_token", newToken);

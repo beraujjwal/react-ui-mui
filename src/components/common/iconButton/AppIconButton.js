@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip, IconButton } from '@mui/material';
-import AppIcon from '../AppIcon';
-import AppLink from '../AppLink';
+import AppIcon from '../icon/AppIcon';
+import AppLink from '../link/AppLink';
 import { alpha } from '@mui/material';
 
 const MUI_ICON_BUTTON_COLORS = ['inherit', 'default', 'primary', 'secondary', 'success', 'error', 'info', 'warning'];

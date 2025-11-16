@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { DialogTitle, Typography, Stack, useTheme } from '@mui/material';
-import { AppIconButton } from '../../appIconButton';
+import { AppIconButton } from '../../iconButton';
 
 /**
  * Renders Material UI Dialog Title with optional (x) button to close the dialog
