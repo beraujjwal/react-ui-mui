@@ -3,10 +3,12 @@ import {
   Drawer,
   AppBar,
   ListItemText,
+  List,
+  ListItem
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useColorMode } from '../../../theme/ThemeProvider';
-
+import InboxIcon from "@mui/icons-material/Inbox";
 import AppBox from '../../common/box/AppBox';
 import AppTypography from '../../common/typography/AppTypography';
 import AppButton from '../../common/button/AppButton';
@@ -32,10 +34,10 @@ const DashboardLayout = ({ children }) => {
         <AppTypography variant="h6">My Dashboard</AppTypography>
       </AppToolbar>
       <AppDivider />
-      <AppList>
+      <AppList variant="hoverable">
         {['Home', 'Users', 'Settings'].map((text) => (
-          <AppListItem button key={text}>
-            <ListItemText primary={text} />
+          <AppListItem label={text} active icon={<InboxIcon />} key={text}>
+            <ListItemText label={text}  primary={text} />
           </AppListItem>
         ))}
       </AppList>
