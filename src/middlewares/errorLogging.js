@@ -1,5 +1,5 @@
 import { isRejectedWithValue } from '@reduxjs/toolkit';
-import { openErrorNotification } from '../components/common/notifications/Notification';
+import { openErrorNotification } from '../components/common/mui/notifications/Notification';
 
 /**
  * Log a warning and show a toast!
