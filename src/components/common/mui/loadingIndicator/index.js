@@ -1,3 +1,3 @@
-import AppAlert from './AppAlert';
+import Circle from './Circle';
 
-export { AppAlert as default, AppAlert };
+export { Circle as AppLoadingIndicator };

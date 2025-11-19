@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Snackbar } from '@mui/material';
-import { APP_SNACKBAR_ANCHOR_ORIGIN_HORIZONTAL, APP_SNACKBAR_ANCHOR_ORIGIN_VERTICAL } from '../config';
+import { APP_SNACKBAR_ANCHOR_ORIGIN_HORIZONTAL, APP_SNACKBAR_ANCHOR_ORIGIN_VERTICAL } from '../../../../config/config';
 
 /**
  * Renders App styled MUI SnackBar

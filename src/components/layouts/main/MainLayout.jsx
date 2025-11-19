@@ -9,14 +9,9 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import { useColorMode } from '../../../theme/ThemeProvider';
 import InboxIcon from "@mui/icons-material/Inbox";
-import AppBox from '../../common/box/AppBox';
-import AppTypography from '../../common/typography/AppTypography';
-import AppButton from '../../common/button/AppButton';
-import AppToolbar from '../../common/toolbar/AppToolbar';
-import AppIconButton from '../../common/iconButton/AppIconButton';
-import AppListItem from '../../common/listItem/AppListItem';
-import AppDivider from '../../common/divider/AppDivider';
-import AppList from '../../common/list/AppList';
+
+
+import { AppBox, AppTypography, AppButton, AppToolbar, AppIconButton, AppListItem, AppDivider, AppList } from '../../common/mui';
 
 
 

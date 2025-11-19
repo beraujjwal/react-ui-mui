@@ -3,7 +3,7 @@ import {
   APP_SNACKBAR_MAX_COUNT,
   APP_SNACKBAR_ANCHOR_ORIGIN_HORIZONTAL,
   APP_SNACKBAR_ANCHOR_ORIGIN_VERTICAL,
-} from '../config';
+} from '../../../../config/config';
 
 /**
  * Provider for SnackBar stack and utils from "notistack" npm

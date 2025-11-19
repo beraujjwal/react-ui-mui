@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { AppSnackBar } from '.';
-import { APP_ALERT_SEVERITY, APP_ALERT_VARIANT, APP_SNACKBAR_AUTO_HIDE_DURATION } from '../config';
-import { AppAlert } from '../forms';
+import { APP_ALERT_SEVERITY, APP_ALERT_VARIANT, APP_SNACKBAR_AUTO_HIDE_DURATION } from '../../../../config/config';
+import { AppAlert } from '../alert';
 
 /**
  * Renders App styled SnackBar with Alert as content

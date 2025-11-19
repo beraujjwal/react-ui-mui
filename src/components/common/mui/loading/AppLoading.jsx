@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GlobalSpinner } from './GlobalSpinner';
-import { useAppSelector } from '../../../hooks/reduxHooks';
-import { themeObject } from '../../../theme/themeVariables';
+import { useAppSelector } from '../../../../hooks/reduxHooks';
+import { themeObject } from '../../../../theme/themeVariables';
 
 
 export const AppLoading = ({ size, color }) => {

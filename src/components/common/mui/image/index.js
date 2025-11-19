@@ -1,3 +1,3 @@
-import AppImgage from './AppImgage';
+import AppImage from './AppImage';
 
-export { AppImgage as default, AppImgage };
+export { AppImage as default, AppImage };

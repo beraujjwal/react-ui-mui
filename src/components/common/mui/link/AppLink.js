@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link as MuiLink } from '@mui/material';
-import { APP_LINK_COLOR, APP_LINK_UNDERLINE } from '../../../config/config';
+import { APP_LINK_COLOR, APP_LINK_UNDERLINE } from '../../../../config/config';
 
 /**
  * Restyled Link for navigation in the App, support internal links by "to" prop and external links by "href" prop

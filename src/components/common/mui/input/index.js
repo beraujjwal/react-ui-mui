@@ -1,3 +1,3 @@
-import AppAlert from './AppAlert';
+import AppTextInput from './text/AppTextInput';
 
-export { AppAlert as default, AppAlert };
+export { AppTextInput };

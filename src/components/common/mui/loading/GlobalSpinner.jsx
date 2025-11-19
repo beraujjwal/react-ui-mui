@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { hexToHSL } from '../../../utils/utils';
+import { hexToHSL } from '../../../../utils/utils';
 
 const SpinnerOriginal = ({ className, color }) => {
   const colors = useMemo(

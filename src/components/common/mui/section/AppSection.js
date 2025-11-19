@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Paper, Typography } from '@mui/material';
-import { APP_SECTION_VARIANT } from '../config';
+import { APP_SECTION_VARIANT } from '../../../../config/config';
 
 /**
  * Renders Application styled "Section" using Material UI Paper and Title components

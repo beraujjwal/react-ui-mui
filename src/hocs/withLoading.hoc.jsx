@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { AppLoading } from '../components/common/loading/AppLoading';
+import { AppLoading } from '../components/common/mui';
 
 export const withLoading = (Component) => {
   return (props) => (

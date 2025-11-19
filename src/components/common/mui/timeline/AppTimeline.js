@@ -1,16 +1,6 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import {
-  Timeline,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-  TimelineOppositeContent,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Timeline } from "@mui/lab";
 
 /**
  * Application styled Timeline component
@@ -48,45 +38,7 @@ const AppTimeline = forwardRef(
           ...sx,
         }}
         {...restOfProps}
-      >
-        {items.map((item, index) => (
-          <TimelineItem key={index}>
-            {showTime && (
-              <TimelineOppositeContent
-                sx={{ m: "auto 0", flex: 0.2 }}
-                align={position === "right" ? "right" : "left"}
-                variant="body2"
-                color="text.secondary"
-              >
-                {item.time}
-              </TimelineOppositeContent>
-            )}
-
-            <TimelineSeparator>
-              <TimelineDot color={item.color || "primary"}>
-                {item.icon}
-              </TimelineDot>
-              {item.connector !== false &&
-                index < items.length - 1 && <TimelineConnector />}
-            </TimelineSeparator>
-
-            <TimelineContent sx={{ py: 1.5 }}>
-              <Typography variant="subtitle1" fontWeight={600}>
-                {item.title}
-              </Typography>
-              {item.description && (
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ mt: 0.5 }}
-                >
-                  {item.description}
-                </Typography>
-              )}
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
+      />
     );
   }
 );

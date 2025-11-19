@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material';
-import { useOnWideScreen } from '../../hooks/layout';
+import { useOnWideScreen } from '../../../../hooks/useOnWideScreen';
 
 /**
  * PropTypes for "common" dialogs
