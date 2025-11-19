@@ -1,6 +1,8 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import { TableRow, TableCell } from "@mui/material";
+import { TableRow } from "@mui/material";
+import { AppTableCell } from "../tableCell";
+
 
 /**
  * Application styled TableRow component
@@ -50,7 +52,7 @@ const AppTableRow = forwardRef(
         {...restOfProps}
       >
         {columns.map((col) => (
-          <TableCell
+          <AppTableCell
             key={col.field}
             align={col.align || "left"}
             sx={{
@@ -64,7 +66,7 @@ const AppTableRow = forwardRef(
             {typeof col.render === "function"
               ? col.render(row)
               : row[col.field] ?? "-"}
-          </TableCell>
+          </AppTableCell>
         ))}
       </TableRow>
     );

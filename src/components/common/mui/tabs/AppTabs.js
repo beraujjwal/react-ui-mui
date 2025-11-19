@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import {
   Tabs,
   Tab,
-  Box,
-  Typography,
-  Badge,
 } from "@mui/material";
+
+import { AppBox } from "../box";
+import { AppBadge } from "../badge";
+import { AppTypography } from "../typography";
 
 /**
  * Application styled Tabs component
@@ -43,7 +44,7 @@ const AppTabs = forwardRef(
     ref
   ) => {
     return (
-      <Box ref={ref} sx={{ width: "100%", ...sx }}>
+      <AppBox ref={ref} sx={{ width: "100%", ...sx }}>
         <Tabs
           value={value}
           onChange={onChange}
@@ -60,20 +61,20 @@ const AppTabs = forwardRef(
             <Tab
               key={tab.value}
               label={
-                <Box display="flex" alignItems="center" gap={1}>
-                  {tab.icon && <Box component="span">{tab.icon}</Box>}
+                <AppBox display="flex" alignItems="center" gap={1}>
+                  {tab.icon && <AppBox component="span">{tab.icon}</AppBox>}
                   {tab.badge ? (
-                    <Badge
+                    <AppBadge
                       badgeContent={tab.badge}
                       color="secondary"
                       overlap="circular"
                     >
-                      <Typography variant="body2">{tab.label}</Typography>
-                    </Badge>
+                      <AppTypography variant="body2">{tab.label}</AppTypography>
+                    </AppBadge>
                   ) : (
-                    <Typography variant="body2">{tab.label}</Typography>
+                    <AppTypography variant="body2">{tab.label}</AppTypography>
                   )}
-                </Box>
+                </AppBox>
               }
               value={tab.value}
               disabled={tab.disabled}
@@ -96,20 +97,20 @@ const AppTabs = forwardRef(
         </Tabs>
 
         {showPanel && (
-          <Box mt={2}>
+          <AppBox mt={2}>
             {Array.isArray(children)
               ? children.map(
                   (child, index) =>
                     tabs[index]?.value === value && (
-                      <Box key={index} role="tabpanel">
+                      <AppBox key={index} role="tabpanel">
                         {child}
-                      </Box>
+                      </AppBox>
                     )
                 )
               : children}
-          </Box>
+          </AppBox>
         )}
-      </Box>
+      </AppBox>
     );
   }
 );

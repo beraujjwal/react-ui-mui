@@ -1,8 +1,13 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import { TableHead, TableRow, TableCell, Box, Typography } from "@mui/material";
+import { TableHead } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+
+import { AppBox } from "../box";
+import { AppTableRow } from "../tableRow";
+import { AppTableCell } from "../tableCell";
+import { AppTypography } from "../typography";
 
 /**
  * Application styled TableHead component
@@ -50,9 +55,9 @@ const AppTableHead = forwardRef(
         }}
         {...restOfProps}
       >
-        <TableRow>
+        <AppTableRow>
           {columns.map((col) => (
-            <TableCell
+            <AppTableCell
               key={col.field}
               align={col.align || "left"}
               width={col.width}
@@ -64,7 +69,7 @@ const AppTableHead = forwardRef(
                 }),
               }}
             >
-              <Box
+              <AppBox
                 display="flex"
                 alignItems="center"
                 justifyContent={
@@ -76,9 +81,9 @@ const AppTableHead = forwardRef(
                 }
                 gap={0.5}
               >
-                <Typography variant="body2" fontWeight={600}>
+                <AppTypography variant="body2" fontWeight={600}>
                   {col.label}
-                </Typography>
+                </AppTypography>
 
                 {col.sortable && sortField === col.field && (
                   <>
@@ -89,10 +94,10 @@ const AppTableHead = forwardRef(
                     )}
                   </>
                 )}
-              </Box>
-            </TableCell>
+              </AppBox>
+            </AppTableCell>
           ))}
-        </TableRow>
+        </AppTableRow>
       </TableHead>
     );
   }

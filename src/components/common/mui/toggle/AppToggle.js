@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import {
   ToggleButton,
   ToggleButtonGroup,
-  Tooltip,
-  Box,
-  Typography,
 } from "@mui/material";
+import { AppBox } from "../box";
+import { AppTypography } from "../typography";
+import { AppTooltip } from "../tooltip";
 
 /**
  * Application styled Toggle component
@@ -45,7 +45,7 @@ const AppToggle = forwardRef(
     };
 
     return (
-      <Box ref={ref} sx={{ display: "flex", justifyContent: "center", ...sx }}>
+      <AppBox ref={ref} sx={{ display: "flex", justifyContent: "center", ...sx }}>
         <ToggleButtonGroup
           value={value}
           exclusive={exclusive}
@@ -83,7 +83,7 @@ const AppToggle = forwardRef(
                 }}
               >
                 {option.icon && (
-                  <Box
+                  <AppBox
                     component="span"
                     sx={{
                       display: "flex",
@@ -92,24 +92,24 @@ const AppToggle = forwardRef(
                     }}
                   >
                     {option.icon}
-                  </Box>
+                  </AppBox>
                 )}
                 {option.label && (
-                  <Typography variant="body2">{option.label}</Typography>
+                  <AppTypography variant="body2">{option.label}</AppTypography>
                 )}
               </ToggleButton>
             );
 
             return option.tooltip ? (
-              <Tooltip key={option.value} title={option.tooltip} arrow>
+              <AppTooltip key={option.value} title={option.tooltip} arrow>
                 {button}
-              </Tooltip>
+              </AppTooltip>
             ) : (
               button
             );
           })}
         </ToggleButtonGroup>
-      </Box>
+      </AppBox>
     );
   }
 );

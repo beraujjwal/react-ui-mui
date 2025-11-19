@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import { Toolbar, Paper } from "@mui/material";
+import { Toolbar } from "@mui/material";
+import { AppPaper } from "../paper";
 
 /**
  * Application styled Toolbar component
@@ -80,10 +81,10 @@ const AppToolbar = forwardRef(
       </Toolbar>
     );
 
-    // For elevated or outlined variants, wrap with Paper for shadow & rounded corners
+    // For elevated or outlined variants, wrap with AppPaper for shadow & rounded corners
     if (["outlined", "elevated"].includes(variant)) {
       return (
-        <Paper
+        <AppPaper
           elevation={variant === "elevated" ? elevation : 0}
           sx={{
             position: sticky ? "sticky" : "static",
@@ -94,12 +95,12 @@ const AppToolbar = forwardRef(
           }}
         >
           {toolbarElement}
-        </Paper>
+        </AppPaper>
       );
     }
 
     return (
-      <Paper
+      <AppPaper
         elevation={0}
         sx={{
           position: sticky ? "sticky" : "static",
@@ -109,7 +110,7 @@ const AppToolbar = forwardRef(
         }}
       >
         {toolbarElement}
-      </Paper>
+      </AppPaper>
     );
   }
 );

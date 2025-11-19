@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import { Tooltip, Box } from "@mui/material";
+import { Tooltip } from "@mui/material";
+import { AppBox } from "../box";
 
 /**
  * Application styled Tooltip component
@@ -33,7 +34,7 @@ const AppTooltip = forwardRef(
   ) => {
     if (disabled || !title) {
       // If disabled or no title, render children as-is
-      return <Box ref={ref}>{children}</Box>;
+      return <AppBox ref={ref}>{children}</AppBox>;
     }
 
     return (
@@ -67,12 +68,12 @@ const AppTooltip = forwardRef(
         }}
         {...restOfProps}
       >
-        <Box
+        <AppBox
           component="span"
           sx={{ display: "inline-flex", alignItems: "center" }}
         >
           {children}
-        </Box>
+        </AppBox>
       </Tooltip>
     );
   }
