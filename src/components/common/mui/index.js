@@ -17,7 +17,7 @@ import { AppGrid } from './grid';
 import { AppIcon } from './icon';
 import { AppIconButton } from './iconButton';
 import { AppImage } from './image';
-import { AppTextInput } from './input';
+import { AppTextInput, AppPassword } from './input';
 import { AppLink } from './link';
 import { AppList } from './list';
 import { AppListItem } from './listItem';
@@ -51,7 +51,7 @@ import { AppTypography } from './typography';
 
 export { 
   AppAccordion, AppAlert, AppAutocomplete, AppBadge, AppBanner, AppBox, AppBreadcrumb, AppButton, AppCard, AppColumn, AppContainer,
-  CommonDialog, MessageDialog, ConfirmationDialog, EmailEditDialog, AppDivider, AppGrid, AppIcon, AppIconButton, AppImage, AppTextInput, AppLink, 
+  CommonDialog, MessageDialog, ConfirmationDialog, EmailEditDialog, AppDivider, AppGrid, AppIcon, AppIconButton, AppImage, AppTextInput, AppPassword, AppLink, 
   AppList, AppListItem, AppLoading, AppLoadingIndicator, AppMenu, AppModal, AppPagination, AppPaper, AppProgress, AppRating, AppSection, AppSkeleton, 
   AppSnackBar, AppStack, AppStepper, AppSwitch, AppTable, AppTableBody, AppTableCell, AppTableHead, AppTableRow, AppTabs, AppTag, AppTimeline, AppToggle, 
   AppToolbar, AppTooltip, AppTypography 

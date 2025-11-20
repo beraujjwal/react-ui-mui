@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 import AppIcon from '../icon/AppIcon';
@@ -27,55 +27,57 @@ const DEFAULT_SX_VALUES = {
  * @param {string} [underline] - controls underline style when button used as link, one of 'none', 'hover', or 'always'
  * @param {string} [variant] - MUI variant of the button, one of 'text', 'outlined', or 'contained'
  */
-const AppButton = ({
-  children,
-  color: propColor = 'inherit',
-  component: propComponent,
-  endIcon,
-  label,
-  startIcon,
-  sx: propSx,
-  text,
-  underline = 'none',
-  variant = APP_BUTTON_VARIANT,
-  ...restOfProps
-}) => {
-  const iconStart = useMemo(
-    () => (!startIcon ? undefined : typeof startIcon === 'string' ? <AppIcon icon={String(startIcon)} /> : startIcon),
-    [startIcon]
-  );
+const AppButton = forwardRef(
+    ({
+    children,
+    color: propColor = 'inherit',
+    component: propComponent,
+    endIcon,
+    label,
+    startIcon,
+    sx: propSx,
+    text,
+    underline = 'none',
+    variant = APP_BUTTON_VARIANT,
+    ...restOfProps
+  }) => {
+    const iconStart = useMemo(
+      () => (!startIcon ? undefined : typeof startIcon === 'string' ? <AppIcon icon={String(startIcon)} /> : startIcon),
+      [startIcon]
+    );
 
-  const iconEnd = useMemo(
-    () => (!endIcon ? undefined : typeof endIcon === 'string' ? <AppIcon icon={String(endIcon)} /> : endIcon),
-    [endIcon]
-  );
+    const iconEnd = useMemo(
+      () => (!endIcon ? undefined : typeof endIcon === 'string' ? <AppIcon icon={String(endIcon)} /> : endIcon),
+      [endIcon]
+    );
 
-  const isMuiColor = useMemo(() => MUI_BUTTON_COLORS.includes(propColor), [propColor]);
+    const isMuiColor = useMemo(() => MUI_BUTTON_COLORS.includes(propColor), [propColor]);
 
-  const componentToRender =
-    !propComponent && (restOfProps?.href || restOfProps?.to) ? AppLink : propComponent ?? Button;
+    const componentToRender =
+      !propComponent && (restOfProps?.href || restOfProps?.to) ? AppLink : propComponent ?? Button;
 
-  const colorToRender = isMuiColor ? propColor : 'inherit';
-  const sxToRender = {
-    ...DEFAULT_SX_VALUES,
-    ...propSx,
-    ...(isMuiColor ? {} : { color: propColor }),
-  };
+    const colorToRender = isMuiColor ? propColor : 'inherit';
+    const sxToRender = {
+      ...DEFAULT_SX_VALUES,
+      ...propSx,
+      ...(isMuiColor ? {} : { color: propColor }),
+    };
 
-  return (
-    <Button
-      component={componentToRender}
-      color={colorToRender}
-      endIcon={iconEnd}
-      startIcon={iconStart}
-      sx={sxToRender}
-      variant={variant}
-      {...{ ...restOfProps, underline }}
-    >
-      {children || label || text}
-    </Button>
-  );
-};
+    return (
+      <Button
+        component={componentToRender}
+        color={colorToRender}
+        endIcon={iconEnd}
+        startIcon={iconStart}
+        sx={sxToRender}
+        variant={variant}
+        {...{ ...restOfProps, underline }}
+      >
+        {children || label || text}
+      </Button>
+    );
+  }
+);
 
 AppButton.propTypes = {
   children: PropTypes.node,
@@ -96,4 +98,4 @@ AppButton.propTypes = {
   underline: PropTypes.oneOf(['none', 'hover', 'always']), // Link prop
 };
 
-export default AppButton;
+export { AppButton };

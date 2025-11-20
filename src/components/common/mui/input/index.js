@@ -1,3 +1,4 @@
 import AppTextInput from './text/AppTextInput';
+import AppPassword from './password/AppPassword';
 
-export { AppTextInput };
+export { AppTextInput, AppPassword };
