@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Dialog, DialogActions, DialogContent, TextField } from '@mui/material';
-import { AppButton } from '..';
+import { AppButton } from '../button';
 import { AppDialogTitle } from './components';
 import { useDialogMinWidth } from './utils';
 

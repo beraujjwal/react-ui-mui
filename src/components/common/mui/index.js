@@ -50,9 +50,9 @@ import { AppTypography } from './typography';
 
 
 export { 
-  AppAccordion, AppAlert, AppAutocomplete, AppBadge, AppBanner, AppBox, AppBreadcrumb, AppButton, AppCard, AppColumn, AppContainer,
-  CommonDialog, MessageDialog, ConfirmationDialog, EmailEditDialog, AppDivider, AppGrid, AppIcon, AppIconButton, AppImage, AppTextInput, AppPassword, AppLink, 
-  AppList, AppListItem, AppLoading, AppLoadingIndicator, AppMenu, AppModal, AppPagination, AppPaper, AppProgress, AppRating, AppSection, AppSkeleton, 
-  AppSnackBar, AppStack, AppStepper, AppSwitch, AppTable, AppTableBody, AppTableCell, AppTableHead, AppTableRow, AppTabs, AppTag, AppTimeline, AppToggle, 
-  AppToolbar, AppTooltip, AppTypography 
+  AppAccordion as Accordion, AppAlert as Alert, AppAutocomplete as Autocomplete, AppBadge as Badge, AppBanner as Banner, AppBox as Box, AppBreadcrumb as Breadcrumb, AppButton as Button, AppCard as Card, AppColumn as Column, AppContainer as Container,
+  CommonDialog as Dialog, MessageDialog as MessageDialog, ConfirmationDialog as ConfirmationDialog, EmailEditDialog as EmailEditDialog, AppDivider as Divider, AppGrid as Grid, AppIcon as Icon, AppIconButton as IconButton, AppImage as Image, AppTextInput as TextInput, AppPassword as Password, AppLink as Link, 
+  AppList as List, AppListItem as ListItem, AppLoading as Loading, AppLoadingIndicator as LoadingIndicator, AppMenu as Menu, AppModal as Modal, AppPagination as Pagination, AppPaper as Paper, AppProgress as Progress, AppRating as Rating, AppSection as Section, AppSkeleton as Skeleton, 
+  AppSnackBar as SnackBar, AppStack as Stack, AppStepper as Stepper, AppSwitch as Switch, AppTable as Table, AppTableBody as TableBody, AppTableCell as TableCell, AppTableHead as TableHead, AppTableRow as TableRow, AppTabs as Tabs, AppTag as Tag, AppTimeline as Timeline, AppToggle as Toggle, 
+  AppToolbar as Toolbar, AppTooltip as Tooltip, AppTypography as Typography 
 };

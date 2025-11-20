@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react';
-import { AppLoading } from '../components/common/mui';
+import { Loading } from '../components/common/mui';
 
 export const withLoading = (Component) => {
   return (props) => (
-    <Suspense fallback={<AppLoading />}>
+    <Suspense fallback={<Loading />}>
       <Component {...props} />
     </Suspense>
   );

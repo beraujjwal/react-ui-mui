@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { TextField, Button, Box } from '@mui/material';
-import { AppButton } from '../../common/mui';
-import { AppTextInput, AppPassword } from '../../common/mui';
+import { Button, TextInput, Password, Box } from '../../common/mui';
 
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../hooks/reduxHooks";
@@ -39,7 +37,7 @@ function LoginForm() {
         name="username"
         control={control}
         render={({ field }) => (
-          <AppTextInput
+          <TextInput
             {...field}
             label={t('common.username')}
             variant="outlined"
@@ -51,7 +49,7 @@ function LoginForm() {
         name="password"
         control={control}
         render={({ field }) => (
-          <AppPassword
+          <Password
             {...field}
             label={t('common.password')}
             type="password"
@@ -60,9 +58,9 @@ function LoginForm() {
           />
         )}
       />
-      <AppButton type="submit" variant="contained" size="medium" color="primary">
+      <Button type="submit" variant="contained" size="medium" color="primary">
         {t('common.login')}
-      </AppButton>
+      </Button>
     </Box>
   );
 }

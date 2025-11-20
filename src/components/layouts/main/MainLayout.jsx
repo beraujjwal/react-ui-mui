@@ -3,15 +3,13 @@ import {
   Drawer,
   AppBar,
   ListItemText,
-  List,
-  ListItem
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useColorMode } from '../../../theme/ThemeProvider';
 import InboxIcon from "@mui/icons-material/Inbox";
 
 
-import { AppBox, AppTypography, AppButton, AppToolbar, AppIconButton, AppListItem, AppDivider, AppList } from '../../common/mui';
+import { Box, Typography, Button, Toolbar, IconButton, ListItem, Divider, List } from '../../common/mui';
 
 
 
@@ -25,37 +23,37 @@ const DashboardLayout = ({ children }) => {
 
   const drawer = (
     <div>
-      <AppToolbar>
-        <AppTypography variant="h6">My Dashboard</AppTypography>
-      </AppToolbar>
-      <AppDivider />
-      <AppList variant="hoverable">
+      <Toolbar>
+        <Typography variant="h6">My Dashboard</Typography>
+      </Toolbar>
+      <Divider />
+      <List variant="hoverable">
         {['Home', 'Users', 'Settings'].map((text) => (
-          <AppListItem label={text} active icon={<InboxIcon />} key={text}>
+          <ListItem label={text} active icon={<InboxIcon />} key={text}>
             <ListItemText label={text}  primary={text} />
-          </AppListItem>
+          </ListItem>
         ))}
-      </AppList>
+      </List>
     </div>
   );
 
   return (
-    <AppBox sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' }}>
       <AppBar position="fixed" sx={{ zIndex: 1201 }}>
-        <AppToolbar>
-          <AppIconButton color="inherit" edge="start" onClick={handleDrawerToggle}>
+        <Toolbar>
+          <IconButton color="inherit" edge="start" onClick={handleDrawerToggle}>
             <MenuIcon />
-          </AppIconButton>
-          <AppTypography variant="h6" sx={{ flexGrow: 1 }}>
+          </IconButton>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Dashboard
-          </AppTypography>
-          <AppButton color="inherit" onClick={toggleColorMode}>
+          </Typography>
+          <Button color="inherit" onClick={toggleColorMode}>
             Toggle Theme
-          </AppButton>
-        </AppToolbar>
+          </Button>
+        </Toolbar>
       </AppBar>
 
-      <AppBox component="nav" sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}>
+      <Box component="nav" sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}>
         <Drawer
           variant="temporary"
           open={mobileOpen}
@@ -78,12 +76,12 @@ const DashboardLayout = ({ children }) => {
         >
           {drawer}
         </Drawer>
-      </AppBox>
+      </Box>
 
-      <AppBox component="main" sx={{ flexGrow: 1, p: 3, mt: 8 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8 }}>
         {children}
-      </AppBox>
-    </AppBox>
+      </Box>
+    </Box>
   );
 };
 

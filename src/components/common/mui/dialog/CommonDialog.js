@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { PropTypesCommonDialog } from './utils';
 import { Dialog, DialogActions, DialogContent } from '@mui/material';
-import { AppButton } from '..';
+import { AppButton } from '../button';
 import { AppDialogTitle } from './components';
 import { useDialogMinWidth } from './utils';
 
