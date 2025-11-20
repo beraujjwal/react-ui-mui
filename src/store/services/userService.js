@@ -1,7 +1,7 @@
 import axios from '../../services/axios.service';
-import { API_VERSION_1_0 } from '../../constants/Path';
+import { API_VERSION_1_0, API_USER_SERVICE } from '../../constants/Path';
 
-const moduleRoot = API_VERSION_1_0 + '/auth';
+const moduleRoot = API_USER_SERVICE + API_VERSION_1_0;
 
 
 class userService {
@@ -15,11 +15,11 @@ class userService {
   }
 
   loginUser(data) {
-    return axios.post(`${moduleRoot}/sign-in`, data);
+    return axios.post(`${moduleRoot}/auth/sign-in`, data);
   }
 
   forgotPassword(data) {
-    return axios.post(`${moduleRoot}/forgot-password`, data);
+    return axios.post(`${moduleRoot}/auth/forgot-password`, data);
   }
 
   resetPassword(userId, token, data) {

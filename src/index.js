@@ -32,7 +32,7 @@ import { AppThemeProvider } from './theme/ThemeProvider';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-//import './utils/i18n';
+import './utils/i18n';
 import { store } from './store';
 
 

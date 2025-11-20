@@ -31,8 +31,7 @@ export const loginUser = createAsyncThunk(
     try {
 
       const res = await userService.loginUser( data );
-      console.log('res', res);
-      persistToken(res?.data?.data?.accessToken);
+      persistToken(res?.data?.data?.token);
       persistUser(res?.data?.data?.user);
       return res.data;
     } catch (err) {

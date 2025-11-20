@@ -6,6 +6,8 @@ export const persistToken = (token) => {
 
 export const readToken = () => {
   let accessToken = localStorage.getItem('accessToken');
+  if(accessToken === 'null') return null;
+  if(accessToken === 'undefined') return null;
   if(accessToken) accessToken =  JSON.parse(accessToken);
   return accessToken?.accessToken;
 };
