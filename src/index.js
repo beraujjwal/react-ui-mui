@@ -28,7 +28,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 import { AppThemeProvider } from './theme/ThemeProvider';
-
+import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -41,7 +41,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <AppThemeProvider>
-        <App />
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
       </AppThemeProvider>
     </Provider>
   </React.StrictMode>

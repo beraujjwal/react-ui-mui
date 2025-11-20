@@ -1,8 +1,11 @@
 import React from 'react';
-// import { HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
 export const PageTitle = ({ children }) => {
   return (
-    <title>{children} | Admin</title>
+    <Helmet>
+      <title>{children} | Admin</title>
+      <meta name="description" content="Welcome to MyApp" />
+    </Helmet>
   );
 };
