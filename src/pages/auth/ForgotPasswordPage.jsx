@@ -1,15 +1,16 @@
-import React from 'react';
-// import { useTranslation } from 'react-i18next';
-import { PageTitle } from '../components/application/common/pageTitles/PageTitle';
-// import { ForgotPasswordForm } from '../components/application/auth/ForgotPasswordForm/ForgotPasswordForm';
+import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
+
+import { PageTitle } from '../../components/application/common/pageTitles/PageTitle'
+import { ForgotPasswordForm } from '../../components/application/auth/ForgotPasswordForm'
 
 const ForgotPasswordPage = () => {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <>
-      <PageTitle>Forgot Password</PageTitle>
-      {/* <ForgotPasswordForm /> */}
+      <PageTitle>{t('common.forgotPassword')}</PageTitle>
+      <ForgotPasswordForm />
     </>
   );
 };
