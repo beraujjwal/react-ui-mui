@@ -1,6 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import userService from "../services/userService";
-import { deleteToken, deleteUser, persistToken, readToken, persistUser } from '../../utils/localStorage'
+import { deleteToken, deleteUser, persistToken, readToken, persistUser } from '../../utils/localStorage';
+
+import socket from '../../utils/socket';
 
 export const registerUser = createAsyncThunk(
   "user/register",
@@ -32,6 +34,13 @@ export const loginUser = createAsyncThunk(
 
       const res = await userService.loginUser( data );
       persistToken(res?.data?.data?.token);
+      socket.auth = { token: res?.data?.data?.token.accessToken }; // send JWT for verification
+      socket.connect();
+
+      socket.emit('join', { userName: res?.data?.data?.user?.name, roomName: 'username' }, () => {
+        console.log(`✅ Joined room: 'username'`);
+      });
+
       persistUser(res?.data?.data?.user);
       return res.data;
     } catch (err) {
