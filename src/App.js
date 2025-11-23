@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { themeObject } from './theme/themeVariables';
 import { AppRouter } from './routers/AppRouter';
 import { useAppSelector } from './hooks/reduxHooks';
+import { IdleTimerProvider } from "react-idle-timer";
 
 import { messaging, getToken, onMessage } from "./utils/firebase";
 
@@ -43,11 +44,18 @@ function App() {
     });
   }, []);
 
+  const onIdle = () => {
+    console.log("User is idle globally");
+    // e.g., auto logout
+  };
+
 
   return (
     <>
       <meta name="theme-color" content={themeObject[theme].primary} />
-      <AppRouter />
+      <IdleTimerProvider timeout={1000 * 60 * 1} onIdle={onIdle}>
+        <AppRouter />
+      </IdleTimerProvider>
     </>
   );
 }
