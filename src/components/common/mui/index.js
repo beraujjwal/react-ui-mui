@@ -46,6 +46,7 @@ import { AppToggle } from './toggle';
 import { AppToolbar } from './toolbar';
 import { AppTooltip } from './tooltip';
 import { AppTypography } from './typography';
+import { AppFormControlLabel } from './label';
 
 
 export { 
@@ -104,5 +105,6 @@ export {
   AppToggle as Toggle, 
   AppToolbar as Toolbar, 
   AppTooltip as Tooltip, 
-  AppTypography as Typography 
+  AppTypography as Typography,
+  AppFormControlLabel as FormControlLabel 
 };

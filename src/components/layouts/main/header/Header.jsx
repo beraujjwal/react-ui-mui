@@ -21,8 +21,13 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useColorMode } from '../../../../theme/ThemeProvider';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useAppDispatch } from '../../../../hooks/reduxHooks';
+import { doLogout } from '../../../../store/slices/authSlice';
 
 const Header = ({ onMenuClick }) => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const { toggleColorMode } = useColorMode();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -46,6 +51,8 @@ const Header = ({ onMenuClick }) => {
   const handleLogout = () => {
     console.log('Logging out...');
     handleMenuClose();
+    dispatch(doLogout());
+    navigate('/auth/login');
   };
 
   return (

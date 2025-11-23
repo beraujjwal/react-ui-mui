@@ -72,7 +72,7 @@ import { Box, Container } from "@mui/material";
 const AuthLayout = () => {
   return (
     <Box sx={{ minHeight: "100vh", display: "flex", alignItems: "center" }}>
-      <Container maxWidth="sm">
+      <Container maxWidth="xl">
         <Outlet />
       </Container>
     </Box>
