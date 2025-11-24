@@ -3,6 +3,8 @@ import authHeader from "../utils/authHeader";
 import { API_BASE_URL } from "../constants/Path";
 import { isTokenValid } from "../utils/validToken";
 
+import { readTokenOnly, storeToken, deleteToken } from './localStorage.service'
+
 const instance = axios.create({
   baseURL: `${API_BASE_URL}`,
   timeout: 30000,
@@ -12,7 +14,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   async(config) => {
-    const token = localStorage.getItem("access_token");
+    const token = readTokenOnly();
 
     if (token) {
       if (isTokenValid(token)) {
@@ -21,12 +23,12 @@ instance.interceptors.request.use(
         const newToken = null; //await refreshAccessToken();
 
         if (newToken) {
-          localStorage.setItem("access_token", newToken);
+          storeToken(newToken);
           config.headers.Authorization = `Bearer ${newToken}`;
         } else {
           console.warn("Token expired. Redirecting to login...");
-          localStorage.removeItem("access_token");
-          window.location.href = "/login";
+          deleteToken();
+          window.location.href = "/auth/login";
           return Promise.reject("Token expired");
         }
       }
@@ -51,7 +53,7 @@ instance.interceptors.response.use(
     ) {
       console.log("token is removed and logout to the login page");
       console.log(error.response);
-      localStorage.removeItem("user");
+      deleteUser();
 
       return new Promise((resolve, reject) => {
         // history nya belom bisa ngepush ke halaman cuma linknya doang terupdate
@@ -63,8 +65,6 @@ instance.interceptors.response.use(
       });
     }
 
-    console.log(error.response);
-
     // If the response is 401 token expired
     if (
       error.response.status === 401 &&
@@ -72,11 +72,10 @@ instance.interceptors.response.use(
     ) {
       console.log("the token must be refreshed");
       return instance
-        .post("auth/refresh", null)
+        .post("user/v1.0/auth/refresh", null)
         .then((res) => {
           const config = error.config;
-          localStorage.removeItem("token");
-          localStorage.setItem("token", JSON.stringify(res.data.token));
+          storeToken(res.data.token);
           config.headers["Authorization"] = `Bearer ${res.data.token}`;
 
           return new Promise((resolve, reject) => {
